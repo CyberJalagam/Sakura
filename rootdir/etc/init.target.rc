@@ -1,0 +1,66 @@
+on init
+    # Force disable all VoLTE support -- it requires intensive modification of frameworks
+    # without framework support it creates all sorts of problems. Disable it.
+    setprop persist.vendor.mtk.volte.enable 0
+    setprop persist.vendor.mtk_ct_volte_support 0
+
+    # bind mount libmtk-ril.so
+    mount none /system/lib64/libmtk-ril.so /vendor/lib64/libmtk-ril.so bind
+
+
+service boot_lc /system/bin/logcat -b all -D -f /cache/boot_lc_full.log
+    class main
+    user root
+    group root system
+    disabled
+    oneshot
+
+service boot_lc_crash /system/bin/logcat -b crash -D -f /cache/boot_lc_crash.log
+    class main
+    user root
+    group root system
+    disabled
+    oneshot
+
+service boot_lc_kernel /system/bin/logcat -b kernel -D -f /cache/boot_lc_kernel.log
+    class main
+    user root
+    group root system
+    disabled
+    oneshot
+
+on fs
+
+    # debug boot process
+    rm /cache/boot_lc_full.log
+    rm /cache/boot_lc_crash.log
+    rm /cache/boot_lc_kernel.log
+    start boot_lc
+    start boot_lc_kernel
+    start boot_lc_crash
+
+on post-fs-boot
+
+on property:sys.boot_completed=1
+    stop boot_lc
+    stop boot_lc_crash
+    stop boot_lc_kernel
+
+on property:dev.bootcomplete=1
+    stop boot_lc
+    stop boot_lc_crash
+    stop boot_lc_kernel
+
+on boot
+
+    # DT2W
+    chown system system /proc/touchpanel/double_tap_enable
+    chown 0660 /proc/touchpanel/double_tap_enable
+
+    # OTG
+    write /sys/devices/platform/odm/odm:oppo_charger/power_supply/usb/otg_switch 1
+
+    #Brightness
+    chown system system /sys/class/leds/lcd-backlight/brightness
+    chmod 0664 /sys/class/leds/lcd-backlight/brightness
+    chmod 0444 /sys/class/leds/lcd-backlight/max_brightness
