@@ -1,0 +1,11 @@
+This is patch directory
+
+cd root_directory_of_rom_src
+
+# Apply patches
+
+sh device/oppo/CPH1859/patches/install.sh
+
+# Uninstall patches
+
+sh device/oppo/CPH1859/patches/uninstall.sh

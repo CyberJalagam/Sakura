@@ -194,3 +194,8 @@ ro.lcd.backlight.samsung_tenbit=10,176,9,45,70,130,214,345,546,686,1023
 ro.mtk_cam_stereo_camera_support=1
 ro.frp.pst=/dev/block/platform/bootdevice/by-name/frp
 ro.build.keystore.path=/sdcard/.lii/
+
+# Brightness
+persist.extend.brightness=true
+persist.display.max_brightness=2047
+ro.custom.maxbrightness.scale=2047
