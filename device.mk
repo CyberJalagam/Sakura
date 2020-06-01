@@ -109,19 +109,6 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf
 
-# Telephony
-PRODUCT_PACKAGES += \
-    ims-ext-common \
-    ims_ext_common.xml \
-    telephony-ext \
-    mtk-telephony-ext
-
-PRODUCT_BOOT_JARS += \
-    telephony-ext
-
-# Overlay from mtk-telephony-ext
-include vendor/mediatek/hardware/telephony-ext/overlay.mk
-
 # Trust
 PRODUCT_PACKAGES += \
     lineage.trust@1.0-service

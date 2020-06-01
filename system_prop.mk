@@ -112,9 +112,6 @@ vendor.ril.cdma.card.type.2=2
 # ipv6
 ro.mtk_tetheringipv6_support=1
 
-# Brightness
-sys.oppo.multibrightness=2047
-
 # Playstore
 ro.com.google.clientidbase=android-oppo
 
@@ -181,14 +178,6 @@ ro.dirac.max_active.headset=5
 ro.dirac.max_active.powersound=3
 ro.dirac.poolsize=2
 dirac.path=/vendor/etc/dirac/17065
-
-# Backlight
-ro.lcd.backlight.config_boe=11,816,5,246,397,665,912,1177,1473,1627,1890,2047
-ro.lcd.backlight.config_dsjm=11,816,5,246,397,665,912,1177,1473,1627,1890,2047
-ro.lcd.backlight.config_jdi=11,851,7,280,435,699,943,1191,1465,1605,1847,2047
-ro.lcd.backlight.config_tianma=11,816,5,246,397,665,912,1177,1473,1627,1890,2047
-ro.lcd.backlight.config_truly=11,816,5,246,397,665,912,1177,1473,1627,1890,2047
-ro.lcd.backlight.samsung_tenbit=10,176,9,45,70,130,214,345,546,686,1023
 
 # Misc
 ro.mtk_cam_stereo_camera_support=1
