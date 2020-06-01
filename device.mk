@@ -50,7 +50,9 @@ PRODUCT_COPY_FILES += \
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.secure_lock_screen.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.secure_lock_screen.xml \
-    $(LOCAL_PATH)/permissions/privapp-permissions-mediatek.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-mediatek.xml
+    $(LOCAL_PATH)/permissions/privapp-permissions-mediatek.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-mediatek.xml \
+    frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/handheld_core_hardware.xml \
+    frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.biometrics.face.xml
 
 # Misc
 PRODUCT_COPY_FILES += \
@@ -75,7 +77,6 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    android.hardware.camera.provider@2.4-impl-mediatek \
     Snap
 
 # Health
@@ -95,10 +96,6 @@ PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-service \
     android.hardware.vibrator@1.0-impl
 
-# USB
-PRODUCT_PACKAGES += \
-    android.hardware.usb@1.1-service-mediatek
-
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-impl \
@@ -106,14 +103,9 @@ PRODUCT_PACKAGES += \
 
 #WiFi
 PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service-mediatek \
     hostapd \
     libwpa_client \
     libwifi-hal \
-    vendor.oppo.hardware.wifi.supplicant@1.0 \
-    vendor.mediatek.hardware.wifi.hostapd@2.0 \
-    vendor.mediatek.hardware.wifi.supplicant@2.0 \
-    vendor.mediatek.hardware.wifi.supplicant@2.1 \
     wpa_supplicant \
     wpa_supplicant.conf
 
