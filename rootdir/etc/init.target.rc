@@ -58,10 +58,20 @@ on property:dev.bootcomplete=1
 
 on boot
 
-    # DT2W
+    # Touchscreen/DT2W
     chown system system /proc/touchpanel/double_tap_enable
     chown 0660 /proc/touchpanel/double_tap_enable
+    write /proc/touchpanel/double_tap_enable 1
 
+    # Disable edge limit control interface
+    write /proc/touchpanel/oppo_tp_limit_enable 0
+
+    # Enable oppo touchpanel direction
+    write /proc/touchpanel/oppo_tp_direction 1
+
+    # Update touchscreen firmware
+    write /proc/touchpanel/tp_fw_update 1
+    
     # OTG
     write /sys/devices/platform/odm/odm:oppo_charger/power_supply/usb/otg_switch 1
 
