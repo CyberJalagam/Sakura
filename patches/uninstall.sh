@@ -2,7 +2,7 @@ echo $1
 rootdirectory="$PWD"
 # ---------------------------------
 
-dirs="external/skia frameworks/base frameworks/opt/net/wifi system/netd"
+dirs="external/skia frameworks/base frameworks/opt/net/wifi"
 
 for dir in $dirs ; do
 	cd $rootdirectory
