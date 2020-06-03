@@ -7,9 +7,6 @@ on init
     # bind mount libmtk-ril.so
     mount none /system/lib64/libmtk-ril.so /vendor/lib64/libmtk-ril.so bind
 
-    # Override codec config
-    mount none /system/etc/media_codecs_mediatek_video.xml /vendor/etc/media_codecs_mediatek_video.xml bind
-
 on post-fs
 	mount none /system/etc/usb_audio_policy_configuration.xml /vendor/etc/usb_audio_policy_configuration.xml bind
 
@@ -32,7 +29,3 @@ on boot
     # OTG
     write /sys/devices/platform/odm/odm:oppo_charger/power_supply/usb/otg_switch 1
 
-on zygote-start
-
-    # Override codec config again in case of Magisk
-    mount none /system/etc/media_codecs_mediatek_video.xml /vendor/etc/media_codecs_mediatek_video.xml bind
