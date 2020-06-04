@@ -121,7 +121,7 @@ TARGET_HAS_FUSEBLK_SEPOLICY_ON_VENDOR := true
 
 # Dexpreopt
 ifeq ($(HOST_OS),linux)
-  ifneq ($(TARGET_BUILD_VARIANT),eng)
+  ifneq ($(TARGET_BUILD_VARIANT),user)
     WITH_DEXPREOPT ?= true
     WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY ?= true
   endif
