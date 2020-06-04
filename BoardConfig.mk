@@ -128,6 +128,9 @@ ifeq ($(HOST_OS),linux)
 endif
 PRODUCT_DEXPREOPT_SPEED_APPS += SystemUI
 
+# Exclude AudioFX
+TARGET_EXCLUDES_AUDIOFX := true
+
 # Network Routing
 TARGET_IGNORES_FTP_PPTP_CONNTRACK_FAILURE := true
 
