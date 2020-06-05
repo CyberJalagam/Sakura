@@ -17,8 +17,3 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/lineage_CPH1859.mk
-
-COMMON_LUNCH_CHOICES := \
-    lineage_CPH1859-user \
-    lineage_CPH1859-userdebug \
-    lineage_CPH1859-eng
