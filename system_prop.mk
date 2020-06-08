@@ -68,6 +68,8 @@ persist.vendor.radio.smart.data.switch=1
 persist.vendor.radio.terminal-based.cw=,disabled_tbcw
 persist.vendor.vilte_support=1
 persist.vendor.viwifi_support=1
+persist.vendor.volte_support=0
+persist.vendor.mtk.volte.enable=0
 
 # Modem
 ro.vendor.sim_refresh_reset_by_modem=1
