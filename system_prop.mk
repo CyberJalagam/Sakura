@@ -22,6 +22,10 @@
 # LCD density
 ro.sf.lcd_density=480
 
+# Camera
+PRODUCT_PRODUCT_PROPERTIES += \
+persist.camera.HAL3.enabled=1
+
 # MediaTek
 ro.mediatek.chip_ver=S01
 ro.mediatek.version.release=CPH1859_11_C.49_200509
