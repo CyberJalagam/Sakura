@@ -12,6 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import common
+import re
+
 def FullOTA_InstallEnd(info):
     info.script.AppendExtra('mount("ext4", "EMMC", "/dev/block/platform/bootdevice/by-name/system", "/system_root");')
     info.script.AppendExtra('unmount("/system_root");')
+    OTA_InstallEnd(info)
+    return
+
+def IncrementalOTA_InstallEnd(info):
+  OTA_InstallEnd(info)
+  return
