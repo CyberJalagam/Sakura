@@ -63,6 +63,9 @@ PRODUCT_PACKAGES += \
     init.recovery.mt6771.rc \
     init.recovery.usb.rc
 
+PRODUCT_PACKAGES += \
+    set_zram.sh
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
